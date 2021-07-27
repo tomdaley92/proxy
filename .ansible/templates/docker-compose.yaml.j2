@@ -3,7 +3,7 @@ services:
 
 
   proxy:
-    image: traefik:v2.4
+    image: traefik:v2.4.11
     volumes:
       - /etc/localtime:/etc/localtime
       - {{ ssl_cert_dir }}/:/etc/ssl/certs/
@@ -16,7 +16,7 @@ services:
       - 443:443
     command:
       # Logging
-      - '--log.level=INFO'
+      - '--log.level=DEBUG'
       - '--accesslog=true'
 
       # Enable dashboard
@@ -46,6 +46,9 @@ services:
       # Global HTTP -> HTTPS redirect
       - '--entryPoints.web.http.redirections.entryPoint.to=websecure'
       - '--entryPoints.web.http.redirections.entryPoint.scheme=https'
+
+      # disable backend server ssl verification
+      - '--serversTransport.insecureSkipVerify=true'
 
       # Trust X-Forwarded-* Headers from specific IPs
       # https://community.traefik.io/t/how-to-properly-use-x-forwarded-for-in-v2/3834
