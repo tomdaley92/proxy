@@ -15,9 +15,11 @@ services:
       - 80:80
       - 443:443
     command:
-      # Logging
-      - '--log.level=DEBUG'
+      # observability
+      - '--log.level=INFO'
       - '--accesslog=true'
+      - '--metrics=true'
+      - '--tracing=true'
 
       # Enable dashboard
       - '--api=true'
