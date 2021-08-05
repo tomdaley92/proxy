@@ -2,7 +2,7 @@
 # https://doc.traefik.io/traefik/reference/dynamic-configuration/file/
 
 tls:
-  certificates:
+  certificates: {% if not certs %}[]{% endif %}
 
 {% for item in certs %}
 
