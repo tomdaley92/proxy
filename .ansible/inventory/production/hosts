@@ -10,12 +10,16 @@ all:
         drone.diesel.net
 
     tools:
-      hosts:
+      hosts:K
         tools.diesel.net
 
     games:
       hosts:
         games.diesel.net
+
+    es:
+      hosts:
+        es.diesel.net
 
   vars:
     ansible_user: automation
