@@ -5,3 +5,5 @@ external_domain: kiwi-labs.net
 trusted_ips:
   - '{{ lookup("dig", internal_domain) }}/24' # internal CIDR
   - '{{ lookup("dig", external_domain) }}' # WAN IP
+
+certs: []
