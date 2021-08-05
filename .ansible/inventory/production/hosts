@@ -10,7 +10,7 @@ all:
         drone.diesel.net
 
     tools:
-      hosts:K
+      hosts:
         tools.diesel.net
 
     games:
